@@ -1,0 +1,10 @@
+# Evaluation Commands
+#
+# Add brew to path
+eval $(/opt/homebrew/bin/brew shellenv)
+#
+# Use oh-my-posh theme
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/negligible.omp.json)"
+
+# Aliases
+alias vim="nvim"
