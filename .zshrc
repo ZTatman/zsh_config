@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
+alias so="source"
 alias vim="nvim"
 alias lc="colorls -a --sd"
 alias lg="lazygit"
@@ -109,7 +110,7 @@ alias lg="lazygit"
 eval $(/opt/homebrew/bin/brew shellenv)
 #
 # Use oh-my-posh theme
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/space.omp.json)"
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
 #
 # Enable tab completion for the following colorls flags
 source $(dirname $(gem which colorls))/tab_complete.sh
