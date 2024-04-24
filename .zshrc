@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="cloud"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,14 +103,29 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias so="source"
 alias vim="nvim"
-alias lc="colorls -a --sd"
+alias zrc="vim ~/./.zshrc"
+alias zenv="vim ~/./.zshenv"
 alias lg="lazygit"
+alias mui='node ~/Projects/Charter/mui/charter-mui-platform/dist/mui.js'
 #
 # Add brew to path
 eval $(/opt/homebrew/bin/brew shellenv)
 #
+# Add JAVA_HOME
+# Use Java 17 SDK
+export JAVA_HOME=$(/usr/libexec/java_home -v "17")
+#
+# Add charter eslint config to path 
+export HOSTS="/private/etc/hosts"
+export APACHE2="/private/etc/apache2/"
+export ESLINT_PATH="/Users/P3062728/Projects/Charter/mui/charter-mui-platform/node_modules"
+export ESLINT_CHARTER_CONFIG="/Users/P3062728/Projects/Charter/mui/charter-mui-platform/eslint/config.json"
+export JRE_KEYSTORE=$JAVA_HOME/lib/security/cacerts
+export PATH=$PATH:$ESLINT_PATH:$ESLINT_CHARTER_CONFIG:$OPENAI_API_KEY
+
 # Use oh-my-posh theme
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/json.omp.json)"
 #
 # Enable tab completion for the following colorls flags
 source $(dirname $(gem which colorls))/tab_complete.sh
+export PATH="/opt/homebrew/opt/mongodb-community@4.4/bin:$PATH"
